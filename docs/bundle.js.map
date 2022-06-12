@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../source/index.js"],
+  "sourcesContent": ["\nlet token_to_dollar = .05\nlet dollar_to_gbp = .81\n\nconst conversions = {\n  \"USD\": 1,\n  \"GBP\": .81,\n  \"EUR\": .95,\n}\n\nwindow.onload = function() {\n  const token_input = document.getElementById('tokens')\n  const fiat_input = document.getElementById('fiat')\n  const currency_select = document.getElementById('currency')\n\n\n  token_input.addEventListener('input', function(e) {\n    fiat_input.value = token_to_dollar * token_input.value * conversions[currency_select.value]\n  })\n\n  fiat_input.addEventListener('input', function(e) {\n    token_input.value = fiat_input.value / conversions[currency_select.value] / token_to_dollar\n  })\n\n  currency_select.addEventListener('change', function(e) {\n    fiat_input.value = token_to_dollar * token_input.value * conversions[currency_select.value]\n  })\n\n}\n"],
+  "mappings": ";AACA,IAAI,kBAAkB;AAGtB,IAAM,cAAc;AAAA,EAClB,OAAO;AAAA,EACP,OAAO;AAAA,EACP,OAAO;AACT;AAEA,OAAO,SAAS,WAAW;AACzB,QAAM,cAAc,SAAS,eAAe,QAAQ;AACpD,QAAM,aAAa,SAAS,eAAe,MAAM;AACjD,QAAM,kBAAkB,SAAS,eAAe,UAAU;AAG1D,cAAY,iBAAiB,SAAS,SAAS,GAAG;AAChD,eAAW,QAAQ,kBAAkB,YAAY,QAAQ,YAAY,gBAAgB;AAAA,EACvF,CAAC;AAED,aAAW,iBAAiB,SAAS,SAAS,GAAG;AAC/C,gBAAY,QAAQ,WAAW,QAAQ,YAAY,gBAAgB,SAAS;AAAA,EAC9E,CAAC;AAED,kBAAgB,iBAAiB,UAAU,SAAS,GAAG;AACrD,eAAW,QAAQ,kBAAkB,YAAY,QAAQ,YAAY,gBAAgB;AAAA,EACvF,CAAC;AAEH;",
+  "names": []
+}
